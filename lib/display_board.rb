@@ -1,4 +1,3 @@
-# code your #valid_move? method here
 board = [" "," "," "," "," "," "," "," "," "]
 def display_board(board)
   row1 = " #{board[0]} | #{board[1]} | #{board[2]} "
@@ -11,17 +10,4 @@ def display_board(board)
   puts row2
   puts row5
 end
-
-
-def input_to_index(number)
-number = number.to_i
-  index = number - 1
-  return index
-end
-
-def turn(board)
-  puts "Please enter 1-9:"
-  input = gets.strip
-  index=input_to_index(input)
-  puts index
-end
+display_board(board)

@@ -19,9 +19,28 @@ number = number.to_i
   return index
 end
 
+def position_taken?(array, index)
+  if array[index] == " "
+    false
+  elsif array[index] == "" || array[index]== nil
+    false
+  else array[index]== "X" || array[index] == "O"
+    true
+  end
+end
+
+def valid_move?(array, index)
+  if position_taken?(array,index) == false && index.between?(0,8)
+    true
+  else
+    false
+  end
+end
+
 def turn(board)
   puts "Please enter 1-9:"
   input = gets.strip
   index=input_to_index(input)
   puts index
+  valid_move?(board, index)
 end
